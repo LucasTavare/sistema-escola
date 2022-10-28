@@ -21,11 +21,11 @@
 
             $_SESSION['email']=$email;
 
-            $retorno = array("retorno"=>"ok","mensagm"=>"Login efetuado com sucesso!");
+            $retorno = array("retorno"=>"ok","mensagem"=>"Login efetuado com sucesso!");
 
         }else{
 
-            $retorno = array("retorno"=>"erro","mensagm"=>"Credenciais invalidas!!!");
+            $retorno = array("retorno"=>"erro","mensagem"=>"Credenciais invalidas!!!");
 
         }
 

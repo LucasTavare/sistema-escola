@@ -14,11 +14,19 @@ const validaLogin = () =>{
         method: 'POST',
         body: dados
     })
-        // .then((response) => response.json())
-        // .then((result) => {
+        .then((response) => response.json())
+        .then((result) => {
 
-        //     result.retorno == 'ok' ? window.location.replace("http://localhost/sistema-escola/paginaInicial.php") : ''
+             
+        Swal.fire({
+            icon: result.retorno != 'ok' ? 'error' : '',
+            title: result.retorno != 'ok' ? 'Falha ao logar!' : '',
+            text: result.retorno != 'ok' ? result.mensagem : '',
+            
+        })
 
-        // })
+            result.retorno == 'ok' ? window.location.replace("http://localhost/sistema-escola/admin/index.html") : ''
+
+        })
     
 }

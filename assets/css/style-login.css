@@ -42,9 +42,15 @@ body{
     gap: 25px;
 }
 
+label{
+    font-weight: bold;
+}
+
 .input-login{
     width: 100%;
     padding: 8px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .center{
@@ -72,4 +78,8 @@ body{
     background-color: white;
     color: darkgreen;
     border: 0.1px solid darkgreen;
+}
+
+h1{
+    color: darkgreen;
 }

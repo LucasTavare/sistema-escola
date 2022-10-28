@@ -1,0 +1,18 @@
+https://getcssscan.com/css-box-shadow-examples : box shadow
+
+
+<================================= sweetalert2 =================================>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+Swal.fire({
+            icon: result.retorno != 'ok' ? 'error' : '',
+            title: result.retorno != 'ok' ? 'Falha ao logar!' : '',
+            text: result.retorno != 'ok' ? result.mensagem : '',
+            
+        })
+
+<================================= Jquery =================================>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
