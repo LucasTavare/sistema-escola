@@ -47,10 +47,66 @@ nav ul li a{
     font-weight: bold;
     padding: 8px;
     font-size: 1.1rem;
+    transition: background 1s;
 } 
 
 nav ul li a:hover{
     color: white;
     background-color: darkgreen;
     border-radius: 15px;
+    transition: background 1s;
+}
+
+.admin-logout{
+    padding: 15px;
+    display: grid;
+    justify-content: space-between;
+}
+
+.admin-logout a{
+    font-size: 1.2rem;
+    color: darkgreen;
+}
+
+.menu-ativo{
+    color: white;
+    background-color: darkgreen;
+    border-radius: 15px;
+    transition: background 1s;
+}
+
+.admin-corpo h2{
+    color: darkgreen;
+}
+
+/*============================== form ==============================*/
+
+
+#form-professores{
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    gap: 10px;
+}
+
+#form-professores div input{
+    width: 100%;
+    padding: 8px 12px;
+}
+
+.btn-cadastro{
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 10vw;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+.center{
+    display: grid;
+    align-items: flex-end;
+    justify-content: center;
+    justify-items: center;
 }

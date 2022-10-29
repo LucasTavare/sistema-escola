@@ -25,7 +25,7 @@ const validaLogin = () =>{
             
         })
 
-            result.retorno == 'ok' ? window.location.replace("http://localhost/sistema-escola/admin/index.html") : ''
+            result.retorno == 'ok' ? window.location.replace("http://localhost/sistema-escola/admin/index.php") : ''
 
         })
     
