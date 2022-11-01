@@ -39,51 +39,82 @@
                <form action="" id="form-professores">
                    <div>
                        <label for="nome">Nome</label>
-                       <input type="text" id="nome" name="">
+                       <input class="campo-cad" type="text" id="nome" name="">
                    </div>
                    <div>
                        <label for="email">E-mail</label>
-                       <input type="email" id="email" name="email">
+                       <input class="campo-cad" type="email" id="email" name="email">
                    </div>
                    <div>
                        <label for="telefone">Telefone</label>
-                       <input type="text" id="telefone" name="telefone">
+                       <input class="campo-cad" type="text" id="telefone" name="telefone">
                    </div>
                    <div>
                        <label for="cpf">CPF</label>
-                       <input type="text" id="cpf" name="cpf">
+                       <input class="campo-cad" type="text" id="cpf" name="cpf">
                    </div>
                    <div>
                        <label for="cep">CEP</label>
-                       <input type="text" id="cep" name="cep">
-                       <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                       <input class="campo-cad" type="text" id="cep" name="cep">
+                       <button type="button" onclick="consultaCep()"><i class="fa-solid fa-magnifying-glass"></i></button>
                    </div>       
                    <div>
                        <label for="rua">Rua</label>
-                       <input type="text" id="rua" name="rua">
+                       <input class="campo-cad" type="text" id="rua" name="rua" readonly>
                    </div>
                    <div>
                        <label for="numero">Numero</label>
-                       <input type="text" id="numero" name="numero">
+                       <input class="campo-cad" type="text" id="numero" name="numero">
                    </div>     
                    <div>
                        <label for="bairro">Bairro</label>
-                       <input type="text" id="bairro" name="bairro">
+                       <input class="campo-cad" type="text" id="bairro" name="bairro" readonly>
                    </div>
                    <div>
                        <label for="cidade">Cidade</label>
-                       <input type="text" id="cidade" name="cidade">
+                       <input class="campo-cad" type="text" id="cidade" name="cidade" readonly>
                    </div>
                    <div>
                        <label for="estado">Estado</label>
-                       <input type="text" id="estado" name="estado">
+                       <!-- <input type="text" id="estado" name="estado" readonly> -->
+                       <select class="campo-cad" id ="estado" nome ="estado">
+                            <option value="" selected disabled>Aguarde...</option>
+                            <option  value = "AC" > Acre </option >
+                            <option  value ="AL" > Alagoas </option >
+                            <option  value ="AP" > Amapá </option >
+                            <option  value ="AM" > Amazonas </option >
+                            <option  value ="BA" > Bahia </option >
+                            <option  value ="CE" > Ceará </option >
+                            <option  value ="DF" > Distrito Federal </option >
+                            <option  value ="ES" > Espírito Santo </option >
+                            <option  value ="GO" > Goiás </option >
+                            <option  value ="MA" > Maranhão </option >
+                            <option  value ="MT" > Mato Grosso </option >
+                            <option  value ="MS" > Mato Grosso do Sul </option >
+                            <option  value ="MG" > Minas Gerais </option >
+                            <option  value ="PA" > Pará </option >
+                            <option  value ="PB" > Paraíba </option >
+                            <option  value ="PR" > Paraná </option >
+                            <option  value ="PE" > Pernambuco </option >
+                            <option  value ="PI" > Piauí </option >
+                            <option  value ="RJ" > Rio de Janeiro </option >
+                            <option  value ="RN" > Rio Grande do Norte </option >
+                            <option  value ="RS" > Rio Grande do Sul </option >
+                            <option  value ="RO" > Rondônia </option >
+                            <option  value ="RR" > Roraima </option >
+                            <option  value ="SC" > Santa Catarina </option >
+                            <option  value ="SP" > São Paulo </option >
+                            <option  value ="SE" > Sergipe </option >
+                            <option  value ="TO" > Tocantins </option >
+                            <option  value ="EX" > Estrangeiro </option >
+                        </select>
                    </div>
                    <div>
                        <label for="complemento">Complemento</label>
-                       <input type="text" id="complemento" name="complemento">
+                       <input class="campo-cad" type="text" id="complemento" name="complemento">
                    </div>
                    <div class="center">
-                   <button type="button" class="btn-cadastro">Cadastrar</button>
+                   <button class="campo-cad"type="button" class="btn-cadastro">Cadastrar</button>
                    </div>
                    
                </form>
@@ -95,6 +126,12 @@
        </main>
    </div> 
 
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+   <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script src="assets/js/jquery.inputmask.min.js"></script>
 
    <script src="assets/js/script-admin.js"></script>
 

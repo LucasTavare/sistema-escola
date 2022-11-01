@@ -88,7 +88,7 @@ nav ul li a:hover{
     gap: 10px;
 }
 
-#form-professores div input{
+#form-professores div .campo-cad{
     width: 100%;
     padding: 8px 12px;
 }
