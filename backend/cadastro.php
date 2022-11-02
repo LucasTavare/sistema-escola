@@ -20,6 +20,8 @@ $cidade = $_POST['cidade'];
 $estado = 'SP';
 $complemento = $_POST['complemento'];
 
+$senha = sha1($nascimento);
+
 $sql = "INSERT INTO tb_usuarios (nome,email,telefone,cpf,data_nascimento,senha,id_tipo)
 VALUES
 ('$nome','$email','$telefone','$cpf','$nascimento','$senha','$tipo')";
@@ -45,9 +47,9 @@ if($dados != null){
 }
 
 
-$sql2 = "INSERT INTO tb_endereco (cep,rua,numero,bairro,cidade,estado,complemento)
+$sql2 = "INSERT INTO tb_endereco (cep,rua,numero,bairro,cidade,estado,complemento,id_usuario)
 VALUES 
-('$cep','$rua','$numero','$bairro','$cidade','$estado','$complemento',) ";
+('$cep','$rua','$numero','$bairro','$cidade','$estado','$complemento','$id') ";
 
 $comando2 = $con -> prepare($sql2);
 
