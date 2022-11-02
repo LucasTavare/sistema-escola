@@ -82,13 +82,13 @@ nav ul li a:hover{
 /*============================== form ==============================*/
 
 
-#form-professores{
+#form-cadastro{
     display: grid;
     grid-template-columns: 6fr 6fr;
     gap: 10px;
 }
 
-#form-professores div .campo-cad{
+#form-cadastro div .campo-cad{
     width: 100%;
     padding: 8px 12px;
 }

@@ -1,9 +1,11 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
     $('#telefone').inputmask('(99) 99999-9999')
     $('#cpf').inputmask('999-999-999.99')
     $('#cpf').inputmask('999-999-999.99')
     $('#cep').inputmask('99999-999')
+
+    pegaTipo()
 
 });
 
@@ -17,7 +19,7 @@ const consultaCep = () => {
     cep = cep.replace("_", "")
     cep = cep.replace("-", "")
 
-    if(cep.length < 9){
+    if(cep.length < 8){
         Swal.fire({
             icon: 'error',
             title: 'Cep não encontrado',
@@ -53,3 +55,45 @@ const consultaCep = () => {
 
         })
 }
+
+const pegaTipo = () => {
+
+    const result = fetch('../backend/listaTipo.php', {
+        method: 'POST',
+        body: ''
+    })
+
+        .then((response) => response.json())
+        .then((result) => {
+
+            result.map(usuario => {
+
+                $('#tipo').append(`
+                    <option value="${usuario.id}">${usuario.tipo}</option>
+                `)
+
+            })
+
+        })
+}
+
+const cadastraUser = () => {
+
+    let dados = new FormData($('#form-cadastro')[0])
+
+    const result = fetch('../backend/cadastro.php', {
+        method: 'POST',
+        body: dados
+    })
+        .then((response) => response.json())
+        .then((result) => {
+
+            Swal.fire({
+                title: 'Atenção',
+                text: result.retorno == 'ok' ? "Cadastro realizado com sucesso!" : result.Mensagem,
+                icon: result.retorno == 'ok' ? 'success' : 'error'
+            })
+        })
+
+}
+

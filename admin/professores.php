@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['email'])){
-        header('Location: ../');
-    }
+    // session_start();
+    // if(!isset($_SESSION['email'])){
+    //     header('Location: ../');
+    // }
 ?>
 
 
@@ -36,10 +36,10 @@
        <main class="admin-corpo">
            <h2>Gestão de Professores</h2>
            <div class="div-professores">
-               <form action="" id="form-professores">
+               <form action="" id="form-cadastro">
                    <div>
                        <label for="nome">Nome</label>
-                       <input class="campo-cad" type="text" id="nome" name="">
+                       <input class="campo-cad" type="text" id="nome" name="nome">
                    </div>
                    <div>
                        <label for="email">E-mail</label>
@@ -113,8 +113,24 @@
                        <label for="complemento">Complemento</label>
                        <input class="campo-cad" type="text" id="complemento" name="complemento">
                    </div>
+                   <div>
+                       <label for="tipo">Cadastro de um...</label>
+                       <select class="campo-cad" id="tipo" name="tipo">
+                            <option value="" disabled selected>Escolha...</option>
+                       </select>
+                   </div>
+
+                   <div>
+                       <label for="nascimento">Data de NAscimento</label>
+                       <input class="campo-cad" type="date" name="nascimento" id="nascimento">
+                   </div>
+                   <div>
+                       <label for="senha">Senha</label>
+                       <input class="campo-cad" type="password" name="senha" id="senha">
+                   </div>
+                   
                    <div class="center">
-                   <button class="campo-cad"type="button" class="btn-cadastro">Cadastrar</button>
+                        <button type="button" class="campo-cad btn-cadastro" onclick="cadastraUser()" > Cadastrar</button>
                    </div>
                    
                </form>
