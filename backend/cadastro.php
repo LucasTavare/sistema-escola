@@ -1,6 +1,7 @@
 <?php
 
 include 'include/conexao.php';
+include 'function.php';
 
 try{
 
@@ -8,7 +9,6 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
 $cpf = $_POST['cpf'];
-$senha = $_POST['senha'];
 $nascimento = $_POST['nascimento'];
 $tipo = $_POST['tipo'];
 
@@ -20,7 +20,33 @@ $cidade = $_POST['cidade'];
 $estado = 'SP';
 $complemento = $_POST['complemento'];
 
-$senha = sha1($nascimento);
+// $senha = implode('', array_reverse(explode('-', $nascimento)));
+$senha = date('dmY', strtotime($nascimento));
+
+$senha = sha1($senha);
+
+$cpf = str_replace(".", "", $cpf);
+$cpf = str_replace("-", "", $cpf);
+
+$telefone = str_replace("(", "", $telefone);
+$telefone = str_replace(")", "", $telefone);
+$telefone = str_replace("-", "", $telefone);
+$telefone = str_replace(" ", "", $telefone);
+
+validaCampoVazio($nome,'nome');
+validaCampoVazio($email,'email');
+validaCampoVazio($telefone,'telefone');
+validaCampoVazio($cpf,'cpf');
+validaCampoVazio($nascimento,'nascimento');
+validaCampoVazio($tipo,'tipo');
+
+validaCampoVazio($cep,'cep');
+validaCampoVazio($rua,'rua');
+validaCampoVazio($numero,'numero');
+validaCampoVazio($bairro,'bairro');
+validaCampoVazio($cidade,'cidade');
+validaCampoVazio($estado,'estado');
+
 
 $sql = "INSERT INTO tb_usuarios (nome,email,telefone,cpf,data_nascimento,senha,id_tipo)
 VALUES
@@ -30,43 +56,16 @@ $comando = $con -> prepare($sql);
 
 $comando -> execute();
 
-$dados = $comando->fetchALL(PDO::FETCH_ASSOC);
+$last_id = $con->lastInsertId();
 
-if($dados != null){
+$sql = "INSERT INTO tb_endereco (cep,rua,numero,bairro,cidade,estado,complemento,id_usuario) VALUES 
+('$cep','$rua','$numero','$bairro','$cidade','$estado','$complemento',$last_id) ";
 
-    session_start();
+$comando = $con -> prepare($sql);
 
-    $_SESSION['email']=$email;
+$comando -> execute();
 
-    $retorno = array("retorno"=>"ok","mensagem"=>"Login efetuado com sucesso!");
-
-}else{
-
-    $retorno = array("retorno"=>"erro","mensagem"=>"Credenciais invalidas!!!");
-
-}
-
-
-$sql2 = "INSERT INTO tb_endereco (cep,rua,numero,bairro,cidade,estado,complemento,id_usuario)
-VALUES 
-('$cep','$rua','$numero','$bairro','$cidade','$estado','$complemento','$id') ";
-
-$comando2 = $con -> prepare($sql2);
-
-$comando2 -> execute();
-
-$dados = $comando2->fetchALL(PDO::FETCH_ASSOC);
-
-if($dados != null){
-
-
-    $retorno = array("retorno"=>"ok","mensagem"=>"Login efetuado com sucesso!");
-
-}else{
-
-    $retorno = array("retorno"=>"erro","mensagem"=>"Credenciais invalidas!!!");
-
-}
+$retorno = array("retorno"=>"ok","mensagem"=>"Usuario inserido com sucesso");
 
 }catch(PDOException $e){
     $retorno = array("retorno"=>"erro","mensagem"=>$e->getMessage());

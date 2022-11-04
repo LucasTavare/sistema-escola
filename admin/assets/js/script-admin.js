@@ -79,7 +79,7 @@ const pegaTipo = () => {
 
 const cadastraUser = () => {
 
-    let dados = new FormData($('#form-cadastro')[0])
+    let dados = new FormData($('#form-cadastro')[0])    
 
     const result = fetch('../backend/cadastro.php', {
         method: 'POST',
@@ -88,11 +88,17 @@ const cadastraUser = () => {
         .then((response) => response.json())
         .then((result) => {
 
-            Swal.fire({
-                title: 'Atenção',
-                text: result.retorno == 'ok' ? "Cadastro realizado com sucesso!" : result.Mensagem,
-                icon: result.retorno == 'ok' ? 'success' : 'error'
-            })
+            
+                Swal.fire({
+                    title: 'Atenção',
+                    text: result.retorno == 'ok' ? "Cadastro realizado com sucesso!" : result.mensagem,
+                    icon: result.retorno == 'ok' ? 'success' : 'error'
+                })
+
+                result.retorno == 'ok' ? $('#form-cadastro')[0].reset() : ''
+
+                
+            
         })
 
 }
