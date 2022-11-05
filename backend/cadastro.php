@@ -25,29 +25,6 @@ $senha = date('dmY', strtotime($nascimento));
 
 $senha = sha1($senha);
 
-$cpf = str_replace(".", "", $cpf);
-$cpf = str_replace("-", "", $cpf);
-
-$telefone = str_replace("(", "", $telefone);
-$telefone = str_replace(")", "", $telefone);
-$telefone = str_replace("-", "", $telefone);
-$telefone = str_replace(" ", "", $telefone);
-
-validaCampoVazio($nome,'nome');
-validaCampoVazio($email,'email');
-validaCampoVazio($telefone,'telefone');
-validaCampoVazio($cpf,'cpf');
-validaCampoVazio($nascimento,'nascimento');
-validaCampoVazio($tipo,'tipo');
-
-validaCampoVazio($cep,'cep');
-validaCampoVazio($rua,'rua');
-validaCampoVazio($numero,'numero');
-validaCampoVazio($bairro,'bairro');
-validaCampoVazio($cidade,'cidade');
-validaCampoVazio($estado,'estado');
-
-
 $sql = "INSERT INTO tb_usuarios (nome,email,telefone,cpf,data_nascimento,senha,id_tipo)
 VALUES
 ('$nome','$email','$telefone','$cpf','$nascimento','$senha','$tipo')";

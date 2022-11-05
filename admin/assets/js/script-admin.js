@@ -96,10 +96,49 @@ const cadastraUser = () => {
                 })
 
                 result.retorno == 'ok' ? $('#form-cadastro')[0].reset() : ''
-
-                
-            
         })
 
 }
 
+// função que exibe a aba cadastro e oculta aba listagem
+
+const abaCadastro = () =>{
+    $('#listagem').hide()
+
+    $('#form-cadastro').show()
+
+}
+
+// função que exibe a aba listagem e oculta aba cadastro
+
+const abaListagem = () =>{
+    $('#form-cadastro').hide()
+
+    $('#listagem').show()
+
+}
+
+const pesquisarUsuario = () =>{
+    let pesquisar = $('#pesquisar').val()
+
+    if(pesquisar == ''){
+        Swal.fire({
+            title: 'Atenção',
+            text: "Digite um nome ou um cpf",
+            icon: 'error'
+        })
+        return
+    }
+
+    dados = new FormData($('#form-listagem')[0])
+
+    result = fetch('../backend/pesquisarUsuario.php',{
+        method: 'POST',
+        body: dados
+    })
+
+    .then((response)=>response.json())
+    .then((result)=>{
+        
+    })
+}

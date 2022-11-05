@@ -91,6 +91,7 @@ nav ul li a:hover{
 #form-cadastro div .campo-cad{
     width: 100%;
     padding: 8px 12px;
+    border: 0.2px solid black;
 }
 
 .btn-cadastro{
@@ -109,4 +110,53 @@ nav ul li a:hover{
     align-items: flex-end;
     justify-content: center;
     justify-items: center;
+}
+
+.tabs{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-bottom: -18px;
+}
+
+.titulo-principal{
+    margin-bottom: 10px;
+    border: 0.3px solid black;
+    border-bottom: none;
+    padding: 3px 10px;
+    border-radius: 4px 4px 0px 0px;
+    cursor: pointer;
+}
+.div-cep{
+    display: flex;
+}
+
+.btn-cep{
+    padding: 8px 12px;
+    background-color: darkgreen;
+    color: white;
+    border: 0.2px solid black;
+    border-left: none;
+}
+
+.titulo-texto{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.tab-ativo{
+background-color: darkgreen;
+}
+
+.tab-ativo p{   
+    color: white;
+}
+
+.input-cep{
+    width: 100% !important;
+}
+
+#listagem{
+    display: none;
 }

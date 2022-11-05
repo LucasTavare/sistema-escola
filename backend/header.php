@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a  href="index.php" class="menu-ativo"> <i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
-                    <li><a  href="cadastroUser.php"> <i class="fa-solid fa-chalkboard-user"></i> Professores</a></li>
+                    <li><a  href="cadastroUser.php"> <i class="fa-solid fa-user-plus"></i> Cadastro</a></li>
                     <li><a href="alunos.php">  <i class="fa-solid fa-list-ol"></i> Alunos</a></li>
                     <li><a href="notas.php"> <i class="fa-solid fa-graduation-cap"></i> Notas </a></li>
                     <hr>
