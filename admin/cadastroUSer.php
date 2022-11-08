@@ -6,7 +6,7 @@
 ?>
 
 <?php
-include '../backend/header.php'
+include 'assets/include/header.php'
 ?>
 
 <main class="admin-corpo">
@@ -149,16 +149,12 @@ include '../backend/header.php'
         </div>
 
 </main>
+
+
 </div>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php
+    include 'assets/include/footer.php'
+?>
 
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-<script src="assets/js/jquery.inputmask.min.js"></script>
-
-<script src="assets/js/script-admin.js"></script>
-
-</body>
-
-</html>

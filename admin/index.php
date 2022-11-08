@@ -1,24 +1,23 @@
 <?php
-    // session_start();
-    // if(!isset($_SESSION['email'])){
-    //     header('Location: ../');
-    // }
+
+include 'assets/include/controleSessao.php';
+
 ?>
 
 <?php
-    include '../backend/header.php'
+include 'assets/include/header.php'
 ?>
 
-       <main class="admin-corpo">
-           <h2>Dashboard</h2>
-                
+<main class="admin-corpo">
+    <h2>Dashboard</h2>
 
 
-       </main>
-   </div> 
+
+</main>
+</div>
 
 
-   <script src="assets/js/script-admin.js"></script>
 
-</body>
-</html>
+<?php
+include 'assets/include/footer.php'
+?>

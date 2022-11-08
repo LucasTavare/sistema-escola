@@ -5,9 +5,9 @@
     try{
         
         $email = $_POST['email'];
-        $senha = $_POST['senha'];
+        $senha = sha1($_POST['senha']);
 
-        $sql = "SELECT email,senha FROM tb_login WHERE email='$email' AND BINARY senha = '$senha'";
+        $sql = "SELECT email,senha FROM tb_usuarios WHERE email='$email' AND BINARY senha = '$senha'";
 
         $comando = $con->prepare($sql);
 

@@ -1,8 +1,7 @@
 <?php
-session_start();
-if (!isset($_SESSION['email'])) {
-    header('Location: ../');
-}
+
+include 'assets/include/controleSessao.php';
+
 ?>
 
 <?php
@@ -10,7 +9,7 @@ include 'assets/include/header.php'
 ?>
 
 <main class="admin-corpo">
-    <h2>Gestão de Notas</h2>
+    <h2>Gestão de Alunos</h2>
 
 
 
