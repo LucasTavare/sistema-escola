@@ -1,8 +1,7 @@
 <?php
-// session_start();
-// if(!isset($_SESSION['email'])){
-//     header('Location: ../');
-// }
+
+include 'assets/include/controleSessao.php';
+
 ?>
 
 <?php
@@ -13,10 +12,10 @@ include 'assets/include/header.php'
     
     <div class="div-cadastros">
         <div class="tabs">
-            <div class="titulo-principal cadastro tab-ativo" onclick="abaCadastro()">
+            <div id="aba-cadastro" class="titulo-principal cadastro tab-ativo" onclick="abaCadastro()">
                 <p class="titulo-texto center">Cadastro de Usuário</p>
             </div>
-            <div class="titulo-principal" onclick="abaListagem()">
+            <div id="aba-listagem" class="titulo-principal" onclick="abaListagem()">
             <p class="titulo-texto center listagem">Listagem de Usuário</p>
             </div>
             

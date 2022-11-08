@@ -9,7 +9,7 @@ include 'assets/include/header.php'
 ?>
 
 <main class="admin-corpo">
-    <h2>Gestão de Alunos</h2>
+    <h2>Gestão de Cursos</h2>
 
 
 

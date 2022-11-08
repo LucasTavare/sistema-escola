@@ -107,6 +107,10 @@ const abaCadastro = () =>{
 
     $('#form-cadastro').show()
 
+    $('#aba-listagem').removeClass('tab-ativo')
+
+    $('#aba-cadastro').addClass('tab-ativo')
+
 }
 
 // função que exibe a aba listagem e oculta aba cadastro
@@ -115,6 +119,10 @@ const abaListagem = () =>{
     $('#form-cadastro').hide()
 
     $('#listagem').show()
+
+    $('#aba-cadastro').removeClass('tab-ativo')
+
+    $('#aba-listagem').addClass('tab-ativo')
 
 }
 
