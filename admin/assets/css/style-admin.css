@@ -194,3 +194,20 @@ background-color: darkgreen;
 #tabela-listagem table tbody{
     width: 100%;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cccccccc;
+    padding: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: darkgreen;
+  }
+  
