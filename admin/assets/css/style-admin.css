@@ -160,3 +160,37 @@ background-color: darkgreen;
 #listagem{
     display: none;
 }
+
+/* TABELAAAAAAAAAAAAAAAAAAAAAA */
+
+#tabela-listagem table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#tabela-listagem table td, #tabela-listagem th{
+    border: 1px solid black;
+    width: 100px;
+}
+
+#tabela-listagem table tr:nth-child(even){
+    background-color: #ddd;
+}
+
+#tabela-listagem table th{
+    padding: 12px;
+    margin-bottom: 12px;
+    text-align: left;
+    background-color: darkgreen;
+    color: white;
+}
+
+#tabela-listagem table td{
+    padding: 10px;
+}
+
+#tabela-listagem table tbody{
+    width: 100%;
+}

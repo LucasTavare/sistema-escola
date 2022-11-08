@@ -119,6 +119,7 @@ const abaListagem = () =>{
 }
 
 const pesquisarUsuario = () =>{
+
     let pesquisar = $('#pesquisar').val()
 
     if(pesquisar == ''){
@@ -139,6 +140,49 @@ const pesquisarUsuario = () =>{
 
     .then((response)=>response.json())
     .then((result)=>{
+
+        
+        $('#resultado-listagem').html(`
+            <div id="tabela-listagem" >
+                <table>
+                    <thead >
+
+                        <tr>
+                            <th style="text-align:center">Nome</th>
+                            <th style="text-align:center">Email</th>
+                            <th style="text-align:center">Telefone</th>
+                            <th style="text-align:center">CPF</th>
+                            <th style="text-align:center">Ações</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody id="dados-tabela-listagem">
+                        
+                    </tbody>
+                </table>    
+            </div>
+        `)
+
+        if(result.length == 0){
+            $('#dados-tabela-listagem').append(`
+            <tr>
+                <td colspan="5">Nenhum dado foi encontrado!</td>
+            </tr>
+            `)
+        }else{
+            result.map((usuario)=>{
+                $('#dados-tabela-listagem').append(`
+                <tr>
+                    <td>${usuario.nome}</td>
+                    <td>${usuario.email}</td>
+                    <td>${usuario.telefone}</td>
+                    <td>${usuario.cpf}</td>
+                    <td><button class="btn-cadastro" type="button">Vizualizar</td>
+                <tr>
+            `)
+            })
+            
+        }
         
     })
 }
